@@ -1,0 +1,13 @@
+FROM node
+
+WORKDIR /bdd
+
+COPY package.json /bdd
+
+RUN npm install
+
+COPY . /bdd
+
+EXPOSE 80
+
+CMD ["node", "server.js"]
