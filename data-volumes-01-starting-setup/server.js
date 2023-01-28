@@ -46,4 +46,5 @@ app.post('/create', async (req, res) => {
   });
 });
 
-app.listen(80);
+// app.listen(80);
+app.listen(process.env.PORT); // PORT 변수는 도커파일에서 설정
