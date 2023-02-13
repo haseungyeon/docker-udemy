@@ -67,8 +67,13 @@ app.get('/people', async (req, res) => {
   }
 });
 
+// app.listen(3000);
+
 mongoose.connect(
-  'mongodb://localhost:27017/swfavorites',
+  // 'mongodb://localhost:27017/swfavorites', // in host
+  // 'mongodb://host.docker.internal:27017/swfavorites', // container to host
+  // 'mongodb://172.17.0.2:27017/swfavorites', // container to container
+  'mongodb://mongodb:27017/swfavorites', // container to docker network conncet as other cotainer's name
   { useNewUrlParser: true },
   (err) => {
     if (err) {
